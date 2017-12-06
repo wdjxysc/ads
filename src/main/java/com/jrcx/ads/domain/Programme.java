@@ -1,8 +1,5 @@
 package com.jrcx.ads.domain;
 
-import com.jrcx.ads.utils.AdsTool;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;
 
@@ -17,20 +14,26 @@ public class Programme extends BaseEntity {
 
     private String sn;
 
-    private Date beginDate;
-
-    private Date endDate;
+    /**
+     * 状态 是否发布
+     */
+    private Integer state;
 
     public Programme() {
     }
 
-    public Programme(String name, Date beginDate, Date endDate) {
-        this.sn = AdsTool.getSn();
+    public Programme(String name) {
         this.name = name;
-        this.beginDate = beginDate;
-        this.endDate = endDate;
         this.setCreateDate(new Date());
         this.setUpdateDate(new Date());
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 
     public String getName() {
@@ -47,21 +50,5 @@ public class Programme extends BaseEntity {
 
     public void setSn(String sn) {
         this.sn = sn;
-    }
-
-    public Date getBeginDate() {
-        return beginDate;
-    }
-
-    public void setBeginDate(Date beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 }

@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface PieceProgrammeRepository extends JpaRepository<PieceProgramme, Long>{
 
-    List<PieceProgramme> findByProgrammeSnOrderByIndexNumAsc(String programmeSn);
+    List<PieceProgramme> findByProgrammeIdOrderByIndexNumAsc(Long programmeId);
 
 }

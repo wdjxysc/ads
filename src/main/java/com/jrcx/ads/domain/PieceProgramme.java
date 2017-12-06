@@ -1,8 +1,6 @@
 package com.jrcx.ads.domain;
 
-import com.jrcx.ads.utils.AdsTool;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
@@ -11,55 +9,40 @@ import javax.persistence.Entity;
  */
 @Entity
 public class PieceProgramme extends BaseEntity {
-    @Column
-    private String sn;
 
-    @Column
-    private String programmeSn;
+    private Long programmeId;
 
-    @Column
-    private String materialSn;
+    private Long materialId;
 
-    @Column
     private Integer timeSecond;
 
-    @Column
     private Integer indexNum;
 
     public PieceProgramme(){
 
     }
 
-    public PieceProgramme(String programmeSn, String materialSn, Integer timeSecond, Integer indexNum) {
-        this.sn = AdsTool.getSn();
-        this.programmeSn = programmeSn;
-        this.materialSn = materialSn;
+    public PieceProgramme(Long programmeId, Long materialId, Integer timeSecond, Integer indexNum) {
+        this.programmeId = programmeId;
+        this.materialId = materialId;
         this.timeSecond = timeSecond;
         this.indexNum = indexNum;
     }
 
-    public String getSn() {
-        return sn;
+    public Long getProgrammeId() {
+        return programmeId;
     }
 
-    public void setSn(String sn) {
-        this.sn = sn;
+    public void setProgrammeId(Long programmeId) {
+        this.programmeId = programmeId;
     }
 
-    public String getProgrammeSn() {
-        return programmeSn;
+    public Long getMaterialId() {
+        return materialId;
     }
 
-    public void setProgrammeSn(String programmeSn) {
-        this.programmeSn = programmeSn;
-    }
-
-    public String getMaterialSn() {
-        return materialSn;
-    }
-
-    public void setMaterialSn(String materialSn) {
-        this.materialSn = materialSn;
+    public void setMaterialId(Long materialId) {
+        this.materialId = materialId;
     }
 
     public Integer getTimeSecond() {

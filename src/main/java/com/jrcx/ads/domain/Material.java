@@ -1,7 +1,7 @@
 package com.jrcx.ads.domain;
 
-import com.jrcx.ads.emuns.MaterialType;
-import com.jrcx.ads.utils.AdsTool;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,39 +13,20 @@ import javax.persistence.Entity;
 @Entity
 public class Material extends BaseEntity {
 
-    @Column
-    private String sn;
-
-    @Column
     private String name;
 
-    @Column
     private String path;
 
-    @Column
-    private String title;
-
-    @Column
     private Integer type;
 
     public Material() {
 
     }
 
-    public Material(String name, String path, String title, Integer type) {
-        this.sn = AdsTool.getSn();
+    public Material(String name, String path, Integer type) {
         this.name = name;
         this.path = path;
-        this.title = title;
         this.type = type;
-    }
-
-    public String getSn() {
-        return sn;
-    }
-
-    public void setSn(String sn) {
-        this.sn = sn;
     }
 
     public String getName() {
@@ -62,14 +43,6 @@ public class Material extends BaseEntity {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public int getType() {

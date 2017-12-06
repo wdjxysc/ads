@@ -1,6 +1,8 @@
 package com.jrcx.ads.domain.dao;
 
 import com.jrcx.ads.domain.Material;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;
@@ -14,4 +16,7 @@ public interface MaterialRepository extends JpaRepository<Material, Long> {
     Material findByName(String name);
 
     Material findByCreateDateBetween(Date beginDate, Date endDate);
+
+    Page<Material> findAll(Pageable pageable);
+
 }

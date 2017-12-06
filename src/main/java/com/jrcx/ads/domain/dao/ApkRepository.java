@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date 2017/11/25
  */
 public interface ApkRepository extends JpaRepository<Apk, Long> {
-
+    public Apk findTopByOrderByVersionNumDesc();
 }

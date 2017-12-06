@@ -1,6 +1,5 @@
 package com.jrcx.ads.emuns;
 
-import javax.persistence.criteria.CriteriaBuilder;
 
 /**
  * @author Administrator.

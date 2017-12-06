@@ -16,13 +16,14 @@ import java.util.Date;
  */
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
-    Device findByName(String name);
+    Device findByDeviceName(String deviceName);
 
     Device findByCreateDateAfter(Date createDate);
 
+    Device findDeviceBySn(String sn);
 
     @Transactional(rollbackFor = Exception.class)
     @Modifying
-    @Query("update Device d set d.updateDate=:updateDate where d.name=:name")
-    int update(@Param("updateDate") Date updateDate, @Param("name") String name);
+    @Query("update Device d set d.updateDate=:updateDate,d.owner=:owner,d.deviceName=:deviceName where d.sn=:sn")
+    int update(@Param("updateDate") Date updateDate, @Param("deviceName") String deviceName, @Param("owner") String owner, @Param("sn") String sn);
 }

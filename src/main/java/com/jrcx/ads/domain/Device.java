@@ -13,29 +13,29 @@ import java.util.Date;
 @Entity
 public class Device extends BaseEntity{
 
-    @Column
-    private String name;
+    private String deviceName;
 
-    @Column
     private String sn;
+
+    private String owner;
 
     public Device() {
 
     }
 
-    public Device(String name, String sn) {
-        this.name = name;
+    public Device(String deviceName, String sn) {
+        this.deviceName = deviceName;
         this.sn = sn;
         this.setCreateDate(new Date());
         this.setUpdateDate(new Date());
     }
 
-    public String getName() {
-        return name;
+    public String getDeviceName() {
+        return deviceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
     }
 
     public String getSn() {
@@ -44,5 +44,13 @@ public class Device extends BaseEntity{
 
     public void setSn(String sn) {
         this.sn = sn;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 }

@@ -10,10 +10,10 @@ import java.util.Date;
  */
 @Entity
 public class User extends BaseEntity {
-    @Column(nullable = false)
+
+    @Column(unique = true)
     private String name;
 
-    @Column(nullable = false)
     private String password;
 
     public User() {
